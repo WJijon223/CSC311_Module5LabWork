@@ -16,19 +16,22 @@ public class Main {
         list.add("sklkj");
 
         // Print the list
-        System.out.println("Original List: " + list);
+        System.out.print("Original List: ");
+        printList(list);
 
         List<String> filteredList = list.stream().filter(word -> word.matches(".*[aeiouAEIOU].*")).collect(Collectors.toList());
 
         // Print the filtered list
-        System.out.println("Filtered List (contains vowels): ");
+        System.out.print("Filtered List (contains vowels): ");
+        printList(filteredList);
 
         List<String> filteredList2 = list.stream()
                 .filter(word -> word.length() > 5)
                 .collect(Collectors.toList());
 
         // Print the filtered list with words longer than 5 characters
-        System.out.println("Filtered List (words longer than 5 characters): " + filteredList2);
+        System.out.print("Filtered List (words longer than 5 characters): ");
+        printList(filteredList2);
     }
 
     public static void printList(List<String> list) {
@@ -36,7 +39,7 @@ public class Main {
             System.out.println("The list is empty or null.");
             return;
         }
-        System.out.println("List contents:");
+        System.out.print("List contents: ");
         for (String item : list) {
             System.out.print(item + ", ");
         }
